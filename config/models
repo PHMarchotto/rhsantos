@@ -4,31 +4,32 @@ Departamento json
     deriving Show
     
 Funcionario json
-    nome        Text
-    cpf         Text
-    UniqueCPF   cpf
-    cdDep       DepartamentoId
-    dtNasc      Day
-    cargo       Text
-    salario     Int
+    nome      Text
+    cpf       Text
+    dtNasc    Day
+    cargo     Text
+    salario   Double
+    UniqueCpf cpf
+    cdDepto   DepartamentoId
     deriving Show
     
 Dependente json
-    cdFunc  FuncionarioId
-    nome    Text
-    cpf     Text
-    dtNasc  Day
+    nome   Text
+    rg     Text
+    dtNasc Day
+    cdFunc FuncionarioId
     deriving Show
     
 Projeto json
-    desc    Text
-    cdDep   DepartamentoId
-    dtInit  Day
-    dtFim   Day
+    descricao Text
+    dtInicio  Day
+    dtFim     Day
+    cdDepto   DepartamentoId
     deriving Show
     
 Usuario json
-    nome     Text
-    email    Text
-    senha    Text
+    nome        Text
+    email       Text
+    senha       Text
+    UniqueEmail email
     deriving Show
