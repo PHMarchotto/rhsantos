@@ -1,4 +1,5 @@
 {-# LANGUAGE NoImplicitPrelude #-}
+{-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
@@ -23,6 +24,23 @@ mkYesodData "App" $(parseRoutesFile "config/routes")
 
 instance Yesod App where
     makeLogger = return . appLogger
+    defaultLayout w = do
+        p <- widgetToPageContent ( 
+               addStylesheet (StaticR materialize_css_materialize_min_css)
+            >> addScript (StaticR materialize_js_materialize_min_js) >> w)
+        msgs <- getMessages
+        withUrlRenderer [hamlet|
+            $newline never
+            $doctype 5
+            <html>
+                <head>
+                    <title>#{pageTitle p}
+                    ^{pageHead p}
+                <body>
+                    $forall (status, msg) <- msgs
+                        <p class="message #{status}">#{msg}
+                    ^{pageBody p}
+            |]
 
 instance YesodPersist App where
     type YesodPersistBackend App = SqlBackend

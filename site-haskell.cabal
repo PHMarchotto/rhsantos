@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 446abe3a011207c31bc0e5bc1e444f2b95660fe4a4e575d1b2f530dd5cc87c2b
+-- hash: 04c91ff53389e83a8ae75ef330b8b8baabca0b4de612c40cbd8c8fc3dfe80ba1
 
 name:           site-haskell
 version:        0.0.0
@@ -23,7 +23,6 @@ library
   exposed-modules:
       Application
       Foundation
-      Handler.Aluno
       Handler.Common
       Import
       Import.NoFoundation

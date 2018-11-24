@@ -1,6 +1,6 @@
 Departamento json
-    nome    Text
-    local   Text
+    nome  Text
+    local Text
     deriving Show
     
 Funcionario json
@@ -18,14 +18,16 @@ Dependente json
     nome    Text
     cpf     Text
     dtNasc  Day
+    deriving Show
     
-Projeto
+Projeto json
     desc    Text
     cdDep   DepartamentoId
     dtInit  Day
     dtFim   Day
+    deriving Show
     
-Usuario
+Usuario json
     nome     Text
     email    Text
     senha    Text
