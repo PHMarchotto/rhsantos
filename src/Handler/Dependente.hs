@@ -10,8 +10,3 @@ import Import
 import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
-getDependenteR :: Handler Html
-getDependenteR =  undefined
-        
-        
-        

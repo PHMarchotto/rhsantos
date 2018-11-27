@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 04c91ff53389e83a8ae75ef330b8b8baabca0b4de612c40cbd8c8fc3dfe80ba1
+-- hash: 7d59e07b3b9518eeecd77b493d2eaf79b01ba4ae2a22c4373e50209fb27895ac
 
 name:           site-haskell
 version:        0.0.0
@@ -24,6 +24,11 @@ library
       Application
       Foundation
       Handler.Common
+      Handler.Departamento
+      Handler.Dependente
+      Handler.Funcionario
+      Handler.Projeto
+      Handler.Usuario
       Import
       Import.NoFoundation
       Model
