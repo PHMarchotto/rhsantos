@@ -1,0 +1,41 @@
+<div style="display: flex;min-height: 100vh;flex-direction: column;">
+    <nav>
+      <div class="nav-wrapper blue">
+        <a href="#" class="brand-logo center" style="text-align: center;">RH-SANTOS
+    
+      <div class="container" style="flex: 1 0 auto;">
+        <div class="box z-depth-3" style="width: 400px;height: 400px;margin: auto;border-radius: 10px; margin-bottom: 100px;">
+          
+          <div class="row" style="background: #ee6e73; border-radius: 10px;">
+    
+            <h4 style="padding: 20px 40px; text-align: center;color: #FFF">Login
+    
+          <div class="row">
+    
+            <form class="col s12" action="Logar" method="post">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input class="validate" id="login" name="login" type="text" required>
+                  <label class="active" for="login">Login
+              
+              <div class="row">
+                <div class="input-field col s12">
+                  <input class="validate" id="senha" name="senha" type="password" required>
+                  <label class="active" for="senha">Senha
+                  
+                <div class="col s8 offset-s8">
+                  <button class="btn waves-effect waves-light" type="submit" name="logar">Logar
+                  
+     <footer class="page-footer orange">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col l6 s12">
+                        <h5 class="white-text">Recursos Humanos
+                        <p class="grey-text text-lighten-4">Sistema para gerenciamento do setor de Recursos Humanos de uma empresa.
+                  <div class="footer-copyright">
+                    <div class="container">
+                    © 2014 Copyright Text
+                    <a class="grey-text text-lighten-4 right" href="#!">More Links
+    
+      
+

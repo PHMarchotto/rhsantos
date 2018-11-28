@@ -1,13 +1,14 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 7d59e07b3b9518eeecd77b493d2eaf79b01ba4ae2a22c4373e50209fb27895ac
+-- hash: c1cbfda81414b20e6ef6ac49ebcc73f84b9d23a4683e3e3536f7aac10cd55400
 
 name:           site-haskell
 version:        0.0.0
 build-type:     Simple
-cabal-version:  >= 1.10
 
 flag dev
   description: Turn on development settings, like auto-reload templates.
@@ -27,6 +28,7 @@ library
       Handler.Departamento
       Handler.Dependente
       Handler.Funcionario
+      Handler.Home
       Handler.Projeto
       Handler.Usuario
       Import
