@@ -24,6 +24,10 @@ mkYesodData "App" $(parseRoutesFile "config/routes")
 
 instance Yesod App where
     makeLogger = return . appLogger
+    isAuthorized HomeR _ = return Authorized
+    isAuthorized LoginR _ = return Authorized
+    isAuthorized StaticR _ = return Authorized
+    isAuthorized _ _ = ehUsuario
     defaultLayout w = do
         p <- widgetToPageContent ( 
                addStylesheet (StaticR materialize_css_materialize_min_css)
@@ -53,3 +57,9 @@ instance RenderMessage App FormMessage where
 
 instance HasHttpManager App where
     getHttpManager = appHttpManager
+    
+ehUsuario = do 
+    logado <- lookupSession "_USR"
+    case logado of 
+        Just _ -> return Authorized
+        Nothing -> return AuthenticationRequired

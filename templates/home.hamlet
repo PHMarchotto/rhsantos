@@ -12,7 +12,7 @@
     
           <div class="row">
     
-            <form class="col s12" action="Logar" method="post">
+            <form class="col s12" action=@{LoginR} method="post">
               <div class="row">
                 <div class="input-field col s12">
                   <input class="validate" id="login" name="login" type="text" required>
