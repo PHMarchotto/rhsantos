@@ -26,7 +26,7 @@ instance Yesod App where
     makeLogger = return . appLogger
     isAuthorized HomeR _ = return Authorized
     isAuthorized LoginR _ = return Authorized
-    isAuthorized StaticR _ = return Authorized
+    isAuthorized (StaticR _) _ = return Authorized
     isAuthorized _ _ = ehUsuario
     defaultLayout w = do
         p <- widgetToPageContent ( 

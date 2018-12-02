@@ -34,7 +34,7 @@ postLoginR = do
                         <h1>
                             #{usuarioNome usuario} LOGADO!
                     |]
-                    redirect HomeR
+                    redirect MenuR
                 Nothing -> do 
                     setMessage [shamlet|
                         <h1>

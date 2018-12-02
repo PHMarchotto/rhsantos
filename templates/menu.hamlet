@@ -1,0 +1,26 @@
+<div style="display:flex; min-height:100vh; flex-direction:column;">
+    <nav>
+        <div class="nav-wrapper blue">
+            <a href="#" class="brand-logo">Recursos Humanos
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">Perfil
+                <li>
+                    <a href="#">Funcionários
+                <li>
+                    <a href="#">Dependentes
+                <li>
+                    <a href="#">Departamentos
+                <li>
+                    <a href="#">Projetos
+    <div style="flex:1 0 auto">
+        <br><br>
+    <footer class="page-footer orange">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Recursos Humanos
+                    <p class="grey-text text-lighten-4">Sistema para gerenciamento do setor de recursos humanos de uma companhia.
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright Text
