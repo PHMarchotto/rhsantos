@@ -25,11 +25,7 @@
             
                     <label class="active" for="senha">Senha
           
-          <!--<div class="col s8 offset-s8">-->
-          
               <button class="btn waves-effect waves-light" type="submit" name="logar">Logar
-        
-              <i class="material-icons right">send
               
    <footer class="page-footer orange">
       <div class="container">
