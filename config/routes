@@ -6,3 +6,5 @@
 /      HomeR GET
 
 /Login LoginR POST
+
+/Menu  MenuR GET

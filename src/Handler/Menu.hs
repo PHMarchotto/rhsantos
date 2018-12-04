@@ -4,15 +4,14 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE QuasiQuotes #-}
-module Handler.Destaque where
+module Handler.Menu where
 
 import Import
 import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
 
-getDestaqueR :: Handler Html
-getDestaqueR = 
+getMenuR :: Handler Html
+getMenuR = do
     defaultLayout $ do 
-        addStylesheet $ StaticR css_estilo_css
-        $(whamletFile "templates/destaque.hamlet")
+        $(whamletFile "templates/menu.hamlet")

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c1cbfda81414b20e6ef6ac49ebcc73f84b9d23a4683e3e3536f7aac10cd55400
+-- hash: d79fde79332810a2b2cf2d7627c6cfc73b48e91214b7747dea7f1a0ec0a2c563
 
 name:           site-haskell
 version:        0.0.0
@@ -29,6 +29,7 @@ library
       Handler.Dependente
       Handler.Funcionario
       Handler.Home
+      Handler.Menu
       Handler.Projeto
       Handler.Usuario
       Import
