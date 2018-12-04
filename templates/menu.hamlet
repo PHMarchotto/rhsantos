@@ -10,17 +10,21 @@
                 <li>
                     <a href="#">Dependentes
                 <li>
-                    <a href="#">Departamentos
+                    <a href=@{DepartamentosR}>Departamentos
                 <li>
                     <a href="#">Projetos
+                    
     <div style="flex:1 0 auto">
         <br><br>
+        
     <footer class="page-footer orange">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">Recursos Humanos
+
                     <p class="grey-text text-lighten-4">Sistema para gerenciamento do setor de recursos humanos de uma companhia.
+        
         <div class="footer-copyright">
             <div class="container">
                 © 2018 Copyright Text

@@ -3,8 +3,16 @@
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
 
-/      HomeR GET
+/      HomeR  GET
 
 /Login LoginR POST
 
-/Menu  MenuR GET
+/Menu  MenuR  GET
+
+/Departamentos DepartamentosR GET
+
+/Departamentos/Salvar SalvarDepartamentoR POST
+
+/Departamentos/Editar/#DepartamentoId EditarDepartamentoR POST
+
+/Departamentos/Apagar/#DepartamentoId ApagarDepartamentoR POST
