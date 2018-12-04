@@ -11,9 +11,8 @@ import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
 
-formDepartamento :: FormInput Handler(Int,Text,Text)
+formDepartamento :: FormInput Handler(Text,Text)
 formDepartamento = pure (,)
-    <*> ireq intField "id"
     <*> ireq textField "nome"
     <*> ireq textField "local"
 

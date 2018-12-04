@@ -10,12 +10,6 @@
       <form class="col s12" method="post" action=@{SalvarDepartamentoR}>
          <div class="row">
             <div class="input-field col s12">
-               <input id="id" name="id" type="text" readonly>
-               
-               <label class="active" for="id">ID
-         
-         <div class="row">
-            <div class="input-field col s12">
                <input class="validate" id="nome" name="nome" type="text" required>
                
                <label class="active" for="nome">Nome
@@ -31,8 +25,6 @@
 <table class="striped centered">
    <thead>
       <tr>
-         <th>ID
-         
          <th>Nome
          
          <th>Local
@@ -45,13 +37,11 @@
       $forall (Entity deptoid departamento) <- departamentos
          <tr>
             <td>
-               #{departamentoId departamento}
-            <td>
                #{departamentoNome departamento}
             <td>
                #{departamentoLocal departamento}
             <td>
-               <a href=@{ExcluirDepartamentoR deptoid} class="waves-effect waves-light btn">Excluir
+               <a href=@{ApagarDepartamentoR deptoid} class="waves-effect waves-light btn">Excluir
             
             <td>
                <a href=@{EditarDepartamentoR deptoid} class="waves-effect waves-light btn">Editar
