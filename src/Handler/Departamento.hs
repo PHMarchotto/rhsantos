@@ -11,8 +11,8 @@ import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
 
-formDepartamento :: FormInput Handler(Text,Text)
-formDepartamento = pure (,)
+formDepartamento :: FormInput Handler Departamento
+formDepartamento = pure Departamento
     <*> ireq textField "nome"
     <*> ireq textField "local"
 
@@ -21,10 +21,26 @@ getDepartamentosR = do
     departamentos <- runDB $ selectList [] [Asc DepartamentoId]
     defaultLayout $ do 
         $(whamletFile "templates/departamentos.hamlet")
+        toWidget[julius|
+            [].slice.call(document.getElementsByClassName("modal-trigger")).forEach(function(x){
+                x.addEventListener("click",function(){
+                    document.forms["FormEdicao"].setAttribute("action", this.dataset.edicao);
+                    document.forms["FormEdicao"].elements["nome"].setAttribute("value", this.dataset.deptonome);
+                    document.forms["FormEdicao"].elements["local"].setAttribute("value", this.dataset.deptolocal);
+                });
+            });
+        |]
+        toWidget[julius|
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.modal');
+                var instances = M.Modal.init(elems,"");
+            });
+        |]
+        
         
 postSalvarDepartamentoR :: Handler Html
 postSalvarDepartamentoR = do 
-    ((res,_),_) <- runFormPost formDepartamento
+    res <- runInputPostResult formDepartamento
     case res of 
         FormSuccess departamento -> do 
             deptoid <- runDB $ insert departamento
@@ -35,3 +51,12 @@ postApagarDepartamentoR :: DepartamentoId -> Handler Html
 postApagarDepartamentoR deptoid = do 
     runDB $ delete deptoid
     redirect DepartamentosR
+
+postEditarDepartamentoR :: DepartamentoId -> Handler Html
+postEditarDepartamentoR deptoid = do
+    res <- runInputPostResult formDepartamento
+    case res of 
+        FormSuccess departamento -> do 
+            deptoid <- runDB $ replace deptoid departamento
+            redirect DepartamentosR
+        _ -> redirect MenuR
