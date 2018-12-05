@@ -24,9 +24,9 @@ getDepartamentosR = do
         toWidget[julius|
             [].slice.call(document.getElementsByClassName("modal-trigger")).forEach(function(x){
                 x.addEventListener("click",function(){
-                    document.forms["FormEdicao"].setAttribute("action", this.dataset.edicao);
-                    document.forms["FormEdicao"].elements["nome"].setAttribute("value", this.dataset.deptonome);
-                    document.forms["FormEdicao"].elements["local"].setAttribute("value", this.dataset.deptolocal);
+                    document.forms["frmEdicao"].setAttribute("action", this.dataset.edicao);
+                    document.forms["frmEdicao"].elements["nome"].setAttribute("value", this.dataset.deptonome);
+                    document.forms["frmEdicao"].elements["local"].setAttribute("value", this.dataset.deptolocal);
                 });
             });
         |]

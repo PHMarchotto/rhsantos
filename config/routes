@@ -16,3 +16,11 @@
 /Departamentos/Editar/#DepartamentoId EditarDepartamentoR POST
 
 /Departamentos/Apagar/#DepartamentoId ApagarDepartamentoR POST
+
+/Funcionarios FuncionariosR GET
+
+/Funcionarios/Salvar SalvarFuncionarioR POST
+
+/Funcionarios/Editar/#FuncionarioId EditarFuncionarioR POST
+
+/Funcionarios/Apagar/#FuncionarioId ApagarFuncionarioR POST

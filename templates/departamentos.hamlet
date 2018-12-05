@@ -42,7 +42,7 @@
             <td>
                #{departamentoLocal departamento}
             <td>
-               <form method="POST" action=@{ApagarDepartamentoR deptoid}>
+               <form method="post" action=@{ApagarDepartamentoR deptoid}>
                   <button class="btn waves-effect waves-light">Excluir
             <td>  
                <button data-target="modal1" class="btn modal-trigger"
@@ -55,7 +55,7 @@
     <div class="modal-content">
       
       <div class="row">
-         <form class="col s12" method="post" id="FormEdicao">
+         <form class="col s12" method="post" id="frmEdicao">
             <div class="row">
                <div class="input-field col s12">
                   <input class="validate" id="nome" name="nome" type="text" required>

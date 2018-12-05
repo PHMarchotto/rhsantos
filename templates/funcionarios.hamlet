@@ -1,0 +1,129 @@
+<nav>
+   <div class="nav-wrapper">
+         <a href="#" class="brand-logo">Funcionarios
+         
+          <ul class="right hide-on-med-and-down">
+              <li>
+                  <a href=@{MenuR} class="waves-effect waves-light btn">Voltar
+
+<div class="container">
+   <div class="row">
+      <form class="col s12" method="post" action=@{SalvarFuncionarioR}>
+         <div class="row">
+            <div class="input-field col s12">
+               <input class="validate" id="nome" name="nome" type="text" required>
+               
+               <label class="active" for="nome">Nome
+               
+         <div class="row">
+            <div class="input-field col s12">
+               <input class="validate" id="cpf" name="cpf" type="text" required>
+               
+               <label class="active" for="cpf">CPF
+         
+         <div class="row">
+            <div class="input-field col s12">
+               <input class="validate" id="dtNasc" name="dtNasc" type="date" required>
+               
+               <label class="active" for="dtNasc">Data de Nascimento
+               
+         <div class="row">
+            <div class="input-field col s12">
+               <input class="validate" id="cargo" name="cargo" type="text" required>
+               
+               <label class="active" for="cargo">Cargo
+        
+         <div class="row">
+            <div class="input-field col s12">
+               <input class="validate" id="salario" name="salario" type="text" required>
+               
+               <label class="active" for="salario">Salario
+         
+         <div class="input-field col s12">
+            <select name="departamento">
+                $forall (Entity deptoid departamento) <- departamentos
+                    <option value=#{fromSqlKey deptoid}>#{departamentoNome departamento}
+            
+            <label>Departamento
+         
+         <button class="btn waves-effect waves-light" type="submit" name="salvar">Salvar
+
+<table class="striped centered">
+   <thead>
+      <tr>
+         <th>Nome
+         
+         <th>CPF
+         
+         <th>Dt. Nasc.
+         
+         <th>Cargo
+         
+         <th>Salario
+         
+         <th>Departamento
+         
+         <th>Excluir
+         
+         <th>Editar
+   
+   <tbody>
+      $forall (Entity funcid funcionario, departamento) <- fsds
+         <tr>
+            <td>
+               #{funcionarioNome funcionario}
+            <td>
+               #{funcionarioCpf funcionario}
+            <td>
+               #{show $ funcionarioDtNasc funcionario}
+            <td>
+               #{funcionarioCargo funcionario}
+            <td>
+               #{funcionarioSalario funcionario}
+            <td>
+               #{departamentoNome departamento}
+            <td>
+               <form method="post" action=@{ApagarFuncionarioR funcid}>
+                  <button class="btn waves-effect waves-light">Excluir
+            <td>  
+               <button data-target="modal1" class="btn modal-trigger"
+                   data-edicao=@{EditarFuncionarioR funcid}
+                   data-funcnome=#{funcionarioNome funcionario}
+                   data-funccpf=#{funcionarioCpf funcionario}
+                   data-funcdtnasc=#{show $ funcionarioDtNasc funcionario}
+                   data-funccargo=#{funcionarioCargo funcionario}
+                   data-funcsalario=#{funcionarioSalario funcionario}>Editar
+               
+<div id="modal1" class="modal">
+
+    <div class="modal-content">
+      
+      <div class="row">
+          <form class="col s12" method="post" id="frmEdicao">
+             <div class="row">
+                <div class="input-field col s12">
+                   <input class="validate" id="nome" name="nome" type="text" required>
+                   
+             <div class="row">
+                <div class="input-field col s12">
+                   <input class="validate" id="cpf" name="cpf" type="text" required>
+             
+             <div class="row">
+                <div class="input-field col s12">
+                   <input class="validate" id="dtNasc" name="dtNasc" type="date" required>
+                   
+             <div class="row">
+                <div class="input-field col s12">
+                   <input class="validate" id="cargo" name="cargo" type="text" required>
+            
+             <div class="row">
+                <div class="input-field col s12">
+                   <input class="validate" id="salario" name="salario" type="text" required>
+             
+             <div class="input-field col s12">
+                <select name="departamento">
+                    <option>Selecione um Departamento
+                    $forall (Entity deptoid departamento) <- departamentos
+                        <option value=#{fromSqlKey deptoid}>#{departamentoNome departamento}
+                        
+             <button class="btn waves-effect waves-light" type="submit" name="salvar">Salvar
