@@ -21,6 +21,7 @@ getDepartamentosR = do
     departamentos <- runDB $ selectList [] [Asc DepartamentoId]
     defaultLayout $ do 
         $(whamletFile "templates/departamentos.hamlet")
+        
         toWidget[julius|
             [].slice.call(document.getElementsByClassName("modal-trigger")).forEach(function(x){
                 x.addEventListener("click",function(){
@@ -30,13 +31,13 @@ getDepartamentosR = do
                 });
             });
         |]
+        
         toWidget[julius|
             document.addEventListener('DOMContentLoaded', function() {
                 var elems = document.querySelectorAll('.modal');
                 var instances = M.Modal.init(elems,"");
             });
         |]
-        
         
 postSalvarDepartamentoR :: Handler Html
 postSalvarDepartamentoR = do 
@@ -45,7 +46,12 @@ postSalvarDepartamentoR = do
         FormSuccess departamento -> do 
             deptoid <- runDB $ insert departamento
             redirect DepartamentosR
-        _ -> redirect MenuR
+        FormFailure erro -> do 
+            setMessage [shamlet|
+                        <h1>
+                            #{show erro}
+                    |]
+            redirect DepartamentosR
 
 postApagarDepartamentoR :: DepartamentoId -> Handler Html
 postApagarDepartamentoR deptoid = do 
@@ -59,4 +65,9 @@ postEditarDepartamentoR deptoid = do
         FormSuccess departamento -> do 
             deptoid <- runDB $ replace deptoid departamento
             redirect DepartamentosR
-        _ -> redirect MenuR
+        FormFailure erro -> do 
+            setMessage [shamlet|
+                        <h1>
+                            #{show erro}
+                    |]
+            redirect DepartamentosR

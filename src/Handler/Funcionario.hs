@@ -28,6 +28,7 @@ getFuncionariosR = do
     let (fsds) = zip funcionarios funcionarioDepartamento
     defaultLayout $ do 
         $(whamletFile "templates/funcionarios.hamlet")
+        
         toWidget[julius|
             [].slice.call(document.getElementsByClassName("modal-trigger")).forEach(function(x){
                 x.addEventListener("click",function(){
@@ -62,10 +63,10 @@ postSalvarFuncionarioR = do
         FormSuccess funcionario -> do 
             funcid <- runDB $ insert funcionario
             redirect FuncionariosR
-        FormFailure x -> do
+        FormFailure erro -> do
             setMessage [shamlet|
                         <h1>
-                            #{show x} Erro!
+                            #{show erro}
                     |]
             redirect FuncionariosR
 
@@ -81,4 +82,9 @@ postEditarFuncionarioR funcid = do
         FormSuccess funcionario -> do 
             funcid <- runDB $ replace funcid funcionario
             redirect FuncionariosR
-        _ -> redirect MenuR
+        FormFailure erro -> do
+            setMessage [shamlet|
+                        <h1>
+                            #{show erro}
+                    |]
+            redirect FuncionariosR
