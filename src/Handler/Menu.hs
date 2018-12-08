@@ -15,3 +15,8 @@ getMenuR :: Handler Html
 getMenuR = do
     defaultLayout $ do 
         $(whamletFile "templates/menu.hamlet")
+        
+postLogoutR :: Handler Html
+postLogoutR = do 
+    deleteSession "_USR"
+    redirect HomeR

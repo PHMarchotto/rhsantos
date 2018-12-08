@@ -6,6 +6,8 @@
                 <li>
                     <a href="#">Perfil
                 <li>
+                    <a href=@{UsuariosR}>Cadastro de Usuário
+                <li>
                     <a href=@{FuncionariosR}>Funcionários
                 <li>
                     <a href=@{DependentesR}>Dependentes
@@ -14,7 +16,9 @@
                 <li>
                     <a href=@{ProjetosR}>Projetos
                 <li>
-                    <a href=@{UsuariosR}>Cadastro de Usuário
+                    <form action=@{LogoutR} method=post>
+                        <input type="submit" value="Logout">   
+                
                     
     <div style="flex:1 0 auto">
         <br><br>

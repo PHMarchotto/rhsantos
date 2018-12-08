@@ -44,3 +44,5 @@
 /usuarios UsuariosR GET
 
 /usuarios/Salvar SalvarUsuarioR POST
+
+/logout LogoutR POST
