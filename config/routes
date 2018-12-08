@@ -40,3 +40,9 @@
 /Projetos/Editar/#ProjetoId EditarProjetoR POST
 
 /Projetos/Apagar/#ProjetoId ApagarProjetoR POST
+
+/Usuarios UsuariosR GET
+
+/Usuarios/Salvar SalvarUsuarioR POST
+
+/Usuarios/Editar/#UsuarioId EditarUsuarioR POST
