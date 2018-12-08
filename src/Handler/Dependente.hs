@@ -22,7 +22,7 @@ getDependentesR :: Handler Html
 getDependentesR = do 
     dependentes <- runDB $ selectList [] [Asc DependenteId]
     funcionarios <- runDB $ selectList [] [Asc FuncionarioId]
-    dependenteFuncionario <- mapM (\f -> runDB $ get404 $ dependenteCdDepto $ entityVal $ f) dependentes
+    dependenteFuncionario <- mapM (\f -> runDB $ get404 $ dependenteCdFunc $ entityVal $ f) dependentes
     let (dpfs) = zip dependentes dependenteFuncionario
     defaultLayout $ do 
         $(whamletFile "templates/dependentes.hamlet")
@@ -32,7 +32,7 @@ getDependentesR = do
                 x.addEventListener("click",function(){
                     document.forms["frmEdicao"].setAttribute("action", this.dataset.edicao);
                     document.forms["frmEdicao"].elements["nome"].setAttribute("value", this.dataset.depenome);
-                    document.forms["frmEdicao"].elements["cpf"].setAttribute("value", this.dataset.deperg);
+                    document.forms["frmEdicao"].elements["rg"].setAttribute("value", this.dataset.deperg);
                     document.forms["frmEdicao"].elements["dtNasc"].setAttribute("value", this.dataset.depedtnasc);
                 });
             });
@@ -76,7 +76,7 @@ postEditarDependenteR depeid = do
     res <- runInputPostResult formDependente
     case res of 
         FormSuccess dependente -> do 
-            funcid <- runDB $ replace depeid dependente
+            depeid <- runDB $ replace depeid dependente
             redirect DependentesR
         FormFailure erro -> do
             setMessage [shamlet|

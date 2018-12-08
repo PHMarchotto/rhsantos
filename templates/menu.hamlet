@@ -8,7 +8,7 @@
                 <li>
                     <a href=@{FuncionariosR}>Funcionários
                 <li>
-                    <a href="#">Dependentes
+                    <a href=@{DependentesR}>Dependentes
                 <li>
                     <a href=@{DepartamentosR}>Departamentos
                 <li>
