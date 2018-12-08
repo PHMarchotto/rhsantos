@@ -4,7 +4,7 @@
             <a href="#" class="brand-logo">Recursos Humanos
             <ul class="right hide-on-med-and-down">
                 <li>
-                    <a href=@{PerfilR}>Perfil
+                    <a href="#">Perfil
                 <li>
                     <a href=@{FuncionariosR}>Funcionários
                 <li>
@@ -13,6 +13,8 @@
                     <a href=@{DepartamentosR}>Departamentos
                 <li>
                     <a href=@{ProjetosR}>Projetos
+                <li>
+                    <a href=@{UsuariosR}>Cadastro de Usuário
                     
     <div style="flex:1 0 auto">
         <br><br>

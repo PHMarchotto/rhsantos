@@ -27,14 +27,15 @@
                
                <label class="active" for="dtNasc">Data de Nascimento
 
-         <div class="input-field col s12">
-            <select name="funcionario">
-                <option disabled>Selecione um Funcionario
-                
-                $forall (Entity funcid funcionario) <- funcionarios
-                    <option value=#{fromSqlKey funcid}>#{funcionarioNome funcionario}
-            
-            <label>Funcionario
+         <div class="row">
+            <div class="input-field col s12">
+               <select name="funcionario">
+                   <option disabled>Selecione um Funcionario
+                   
+                   $forall (Entity funcid funcionario) <- funcionarios
+                       <option value=#{fromSqlKey funcid}>#{funcionarioNome funcionario}
+               
+               <label>Funcionario
          
          <button class="btn waves-effect waves-light" type="submit" name="salvar">Salvar
          
