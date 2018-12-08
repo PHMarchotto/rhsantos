@@ -1,0 +1,79 @@
+<nav>
+   <div class="nav-wrapper">
+         <a href="#" class="brand-logo">Dependentes
+         
+          <ul class="right hide-on-med-and-down">
+              <li>
+                  <a href=@{MenuR} class="waves-effect waves-light btn">Voltar
+
+<div class="container">
+   <div class="row">
+      <form class="col s12" method="post" action=@{SalvarDependenteR}>
+         <div class="row">
+            <div class="input-field col s12">
+               <input class="validate" id="nome" name="nome" type="text" required>
+               
+               <label class="active" for="nome">Nome
+         
+         <div class="row">
+            <div class="input-field col s12">
+               <input class="validate" id="rg" name="rg" type="text" required>
+               
+               <label class="active" for="rg">Rg
+
+         <div class="row">
+            <div class="input-field col s12">
+               <input class="validate" id="dtnasc" name="dtnasc" type="text" required>
+               
+               <label class="active" for="dtnasc">Data de Nascimento
+         
+         <button class="btn waves-effect waves-light" type="submit" name="salvar">Salvar
+
+<table class="striped centered">
+   <thead>
+      <tr>
+         <th>Nome
+         
+         <th>RG
+
+         <th>Data de Nascimento
+         
+         <th>Excluir
+         
+         <th>Editar
+   
+   <tbody>
+      $forall (Entity depeid dependente) <- dependentes
+         <tr>
+            <td>
+               #{dependenteNome dependente}
+            <td>
+               #{dependenterg dependente}
+            <td>
+               #{dependentedtnasc dependente}
+            <td>
+               <form method="POST" action=@{ApagarDependenteR depeid}>
+                  <button class="btn waves-effect waves-light">Excluir
+            <td>  
+               <button data-target="modal1" class="btn modal-trigger"
+                   data-edicao=@{EditarDependenteR depeid}
+                   data-depenome=#{dependenteNome dependente}
+                   data-depenome=#{dependenterg dependente}
+                   data-depenome=#{dependentedtnasc dependente}
+                   data-deperg=#{dependenterg dependente}>Editar
+               
+<div id="modal1" class="modal">
+
+    <div class="modal-content">
+      
+      <div class="row">
+         <form class="col s12" method="post" id="frmEdicao">
+            <div class="row">
+               <div class="input-field col s12">
+                  <input class="validate" id="nome" name="nome" type="text" required>
+                  
+            <div class="row">
+               <div class="input-field col s12">
+                  <input class="validate" id="rg" name="rg" type="text" required>
+            
+            <button class="btn waves-effect waves-light" type="submit" name="salvar">Salvar

@@ -24,3 +24,11 @@
 /Funcionarios/Editar/#FuncionarioId EditarFuncionarioR POST
 
 /Funcionarios/Apagar/#FuncionarioId ApagarFuncionarioR POST
+
+/Dependentes DependentesR GET
+
+/Dependentes/Salvar SalvarDependenteR POST
+
+/Dependentes/Editar/#DependenteId EditarDependenteR POST
+
+/Dependentes/Apagar/#DependenteId ApagarDependenteR POST
