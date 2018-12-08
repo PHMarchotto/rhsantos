@@ -73,19 +73,18 @@
                    data-edicao=@{EditarProjetoR projid}
                    data-projdescricao=#{projetoDescricao projeto}
                    data-projdtinicio=#{show $ projetoDtInicio projeto}
-                   data-projdtfim=##{show $ projetoDtFim projeto}>Editar
+                   data-projdtfim=#{show $ projetoDtFim projeto}>Editar
                
 <div id="modal1" class="modal">
 
     <div class="modal-content">
       
       <div class="row">
-      <form class="col s12" method="post" action=@{SalvarProjetoR}>
+      <form class="col s12" method="post" action=@{SalvarProjetoR} id="frmEdicao">
         <div class="row">
+            <label class="active" for="descricao">Descrição
             <div class="input-field col s12">
                <input class="validate" id="descricao" name="descricao" type="text" required>
-               
-               <label class="active" for="descricao">Descrição
                
          <div class="row">
             <div class="input-field col s12">
