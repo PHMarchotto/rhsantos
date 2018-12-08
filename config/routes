@@ -32,3 +32,11 @@
 /Dependentes/Editar/#DependenteId EditarDependenteR POST
 
 /Dependentes/Apagar/#DependenteId ApagarDependenteR POST
+
+/Projetos ProjetosR GET
+
+/Projetos/Salvar SalvarProjetoR POST
+
+/Projetos/Editar/#ProjetoId EditarProjetoR POST
+
+/Projetos/Apagar/#ProjetoId ApagarProjetoR POST
