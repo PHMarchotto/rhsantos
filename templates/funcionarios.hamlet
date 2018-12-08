@@ -1,5 +1,5 @@
 <nav>
-   <div class="nav-wrapper">
+   <div class="nav-wrapper blue">
          <a href="#" class="brand-logo">Funcionarios
          
           <ul class="right hide-on-med-and-down">
@@ -101,32 +101,41 @@
     <div class="modal-content">
       
       <div class="row">
-          <form class="col s12" method="post" id="frmEdicao">
-             <div class="row">
-                <div class="input-field col s12">
-                   <input class="validate" id="nome" name="nome" type="text" required>
+      <form class="col s12" method="post" action=@{SalvarFuncionarioR} id="frmEdicao">
+         <div class="row">
+            <label class="active" for="nome">Nome
+            <div class="input-field col s12">
+               <input class="validate" id="nome" name="nome" type="text" required>
+               
+         <div class="row">
+            <label class="active" for="cpf">CPF
+            <div class="input-field col s12">
+               <input class="validate" id="cpf" name="cpf" type="text" required>
+         
+         <div class="row">
+            <label class="active" for="dtNasc">Data de Nascimento
+            <div class="input-field col s12">
+               <input class="validate" id="dtNasc" name="dtNasc" type="date" required>
+               
+         <div class="row">
+            <label class="active" for="cargo">Cargo
+            <div class="input-field col s12">
+               <input class="validate" id="cargo" name="cargo" type="text" required>
+        
+         <div class="row">
+            <label class="active" for="salario">Salario
+            <div class="input-field col s12">
+               <input class="validate" id="salario" name="salario" type="text" required>
+         
+         <div class="row">
+            <label>Departamento
+            <div class="input-field col s12">
+               <select name="departamento">
+                   <option disabled>Selecione um Departamento
                    
-             <div class="row">
-                <div class="input-field col s12">
-                   <input class="validate" id="cpf" name="cpf" type="text" required>
-             
-             <div class="row">
-                <div class="input-field col s12">
-                   <input class="validate" id="dtNasc" name="dtNasc" type="date" required>
-                   
-             <div class="row">
-                <div class="input-field col s12">
-                   <input class="validate" id="cargo" name="cargo" type="text" required>
+                   $forall (Entity deptoid departamento) <- departamentos
+                       <option value=#{fromSqlKey deptoid}>#{departamentoNome departamento}
             
-             <div class="row">
-                <div class="input-field col s12">
-                   <input class="validate" id="salario" name="salario" type="text" required>
-             
-             <div class="input-field col s12">
-                <select name="departamento">
-                    <option disabled>Selecione um Departamento
-                    
-                    $forall (Entity deptoid departamento) <- departamentos
-                        <option value=#{fromSqlKey deptoid}>#{departamentoNome departamento}
-                        
-             <button class="btn waves-effect waves-light" type="submit" name="salvar">Salvar
+            
+         
+         <button class="btn waves-effect waves-light" type="submit" name="salvar">Salvar
