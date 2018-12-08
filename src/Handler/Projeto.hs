@@ -57,7 +57,7 @@ postSalvarProjetoR = do
     res <- runInputPostResult formProjeto
     case res of 
         FormSuccess projeto -> do 
-            funcid <- runDB $ insert projeto
+            projid <- runDB $ insert projeto
             redirect ProjetosR
         FormFailure erro -> do
             setMessage [shamlet|
@@ -71,16 +71,16 @@ postApagarProjetoR projid = do
     runDB $ delete projid
     redirect ProjetosR
 
-postEditarFuncionarioR :: ProjetoId -> Handler Html
-postEditarFuncionarioR funcid = do
-    res <- runInputPostResult formFuncionario
+postEditarProjetoR :: ProjetoId -> Handler Html
+postEditarProjetoR projid = do
+    res <- runInputPostResult formProjeto
     case res of 
-        FormSuccess funcionario -> do 
-            funcid <- runDB $ replace funcid funcionario
-            redirect FuncionariosR
+        FormSuccess projeto -> do 
+            projid <- runDB $ replace projid projeto
+            redirect ProjetosR
         FormFailure erro -> do
             setMessage [shamlet|
                         <h1>
                             #{show erro}
                     |]
-            redirect FuncionariosR
+            redirect ProjetosR

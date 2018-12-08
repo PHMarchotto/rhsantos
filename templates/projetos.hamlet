@@ -73,7 +73,7 @@
                    data-edicao=@{EditarProjetoR projid}
                    data-projdescricao=#{projetoDescricao projeto}
                    data-projdtinicio=#{show $ projetoDtInicio projeto}
-                   data-projdtfim=##{show $ projetoDtFim projeto}
+                   data-projdtfim=##{show $ projetoDtFim projeto}>Editar
                
 <div id="modal1" class="modal">
 
