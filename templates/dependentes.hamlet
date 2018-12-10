@@ -77,29 +77,29 @@
     <div class="modal-content">
       
       <div class="row">
-      <form class="col s12" method="post" action=@{SalvarDependenteR} id="frmEdicao">
-         <div class="row">
-            <label class="active" for="nome">Nome
-            <div class="input-field col s12">
-               <input class="validate" id="nome" name="nome" type="text" required>
-         
-         <div class="row">
-            <label class="active" for="rg">Rg
-            <div class="input-field col s12">
-               <input class="validate" id="rg" name="rg" type="text" required>
-
-         <div class="row">
-            <label class="active" for="dtNasc">Data de Nascimento
-            <div class="input-field col s12">
-               <input class="validate" id="dtNasc" name="dtNasc" type="date" required>
-
-         <div class="row">
-            <label>Funcionario
-            <div class="input-field col s12">
-               <select name="funcionario">
-                   <option disabled>Selecione um Funcionario
-                   
-                   $forall (Entity funcid funcionario) <- funcionarios
-                       <option value=#{fromSqlKey funcid}>#{funcionarioNome funcionario}
-         
-         <button class="btn waves-effect waves-light" type="submit" name="salvar">Salvar
+         <form class="col s12" method="post" action=@{SalvarDependenteR} id="frmEdicao">
+            <div class="row">
+               <label class="active" for="nome">Nome
+               <div class="input-field col s12">
+                  <input class="validate" id="nome" name="nome" type="text" required>
+            
+            <div class="row">
+               <label class="active" for="rg">Rg
+               <div class="input-field col s12">
+                  <input class="validate" id="rg" name="rg" type="text" required>
+   
+            <div class="row">
+               <label class="active" for="dtNasc">Data de Nascimento
+               <div class="input-field col s12">
+                  <input class="validate" id="dtNasc" name="dtNasc" type="date" required>
+   
+            <div class="row">
+               <label>Funcionario
+               <div class="input-field col s12">
+                  <select name="funcionario">
+                      <option disabled>Selecione um Funcionario
+                      
+                      $forall (Entity funcid funcionario) <- funcionarios
+                          <option value=#{fromSqlKey funcid}>#{funcionarioNome funcionario}
+            
+            <button class="btn waves-effect waves-light" type="submit" name="salvar">Salvar

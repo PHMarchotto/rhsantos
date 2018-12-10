@@ -10,6 +10,7 @@ import Import
 import Text.Lucius
 import Text.Julius
 import Database.Persist.Sql
+import Settings.StaticFiles
 
 formLogin :: FormInput Handler (Text, Text)
 formLogin = pure (,)
