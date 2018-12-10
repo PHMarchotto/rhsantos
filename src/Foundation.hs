@@ -31,7 +31,6 @@ instance Yesod App where
     defaultLayout w = do
         p <- widgetToPageContent ( 
                addStylesheet (StaticR materialize_css_materialize_min_css)
-            >> addStylesheetRemote "https://fonts.googleapis.com/icon?family=Material+Icon"
             >> addScript (StaticR materialize_js_materialize_min_js) >> w)
         msgs <- getMessages
         withUrlRenderer [hamlet|

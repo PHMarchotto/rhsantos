@@ -1,7 +1,7 @@
 <div style="display: flex;min-height: 100vh;flex-direction: column;">
    <nav>
        <div class="nav-wrapper blue">
-          <a href="#" class="brand-logo center" style="text-align: center;">RH-SANTOS
+         <img class="brand-logo center" src="" alt="logo">
         
    <div class="container" style="flex: 1 0 auto;">
       <div class="box z-depth-3" style="width: 400px;height: 400px;margin: auto;border-radius: 10px; margin-bottom: 100px;">
